@@ -1,0 +1,6 @@
+<h2>Edit weapon</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: weapon_path(@conn, :update, @weapon) %>
+
+<%= link "Back", to: weapon_path(@conn, :index) %>
