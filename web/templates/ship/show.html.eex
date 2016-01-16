@@ -1,0 +1,33 @@
+<h2>Show ship</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @ship.name %>
+  </li>
+
+  <li>
+    <strong>Armor:</strong>
+    <%= @ship.armor %>
+  </li>
+
+  <li>
+    <strong>Class:</strong>
+    <%= @ship.class %>
+  </li>
+
+  <li>
+    <strong>Subclass:</strong>
+    <%= @ship.subclass %>
+  </li>
+
+  <li>
+    <strong>Icon uri:</strong>
+    <%= @ship.icon_uri %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: ship_path(@conn, :edit, @ship) %>
+<%= link "Back", to: ship_path(@conn, :index) %>

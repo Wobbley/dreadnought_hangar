@@ -1,0 +1,34 @@
+<h2>Listing ships</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Armor</th>
+      <th>Class</th>
+      <th>Subclass</th>
+      <th>Icon uri</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ship <- @ships do %>
+    <tr>
+      <td><%= ship.name %></td>
+      <td><%= ship.armor %></td>
+      <td><%= ship.class %></td>
+      <td><%= ship.subclass %></td>
+      <td><%= ship.icon_uri %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: ship_path(@conn, :show, ship), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: ship_path(@conn, :edit, ship), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: ship_path(@conn, :delete, ship), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New ship", to: ship_path(@conn, :new) %>
