@@ -1,0 +1,33 @@
+<h2>Show ability</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @ability.name %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @ability.type %>
+  </li>
+
+  <li>
+    <strong>Duration:</strong>
+    <%= @ability.duration %>
+  </li>
+
+  <li>
+    <strong>Cooldown:</strong>
+    <%= @ability.cooldown %>
+  </li>
+
+  <li>
+    <strong>Icon uri:</strong>
+    <%= @ability.icon_uri %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: ability_path(@conn, :edit, @ability) %>
+<%= link "Back", to: ability_path(@conn, :index) %>
