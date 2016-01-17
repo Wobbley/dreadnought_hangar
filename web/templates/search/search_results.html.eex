@@ -1,0 +1,60 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Duration</th>
+      <th>Cooldown</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ability <- @abilities do %>
+    <tr>
+      <td><%= ability.name %></td>
+      <td><%= ability.duration %></td>
+      <td><%= ability.cooldown %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ammo</th>
+      <th>Reload time</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for weapon <- @weapons do %>
+    <tr>
+      <td><%= weapon.name %></td>
+      <td><%= weapon.shots %></td>
+      <td><%= weapon.reload_time %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Armor</th>
+      <th>Class</th>
+      <th>Subclass</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ship <- @ships do %>
+    <tr>
+      <td><%= ship.name %></td>
+      <td><%= ship.armor %></td>
+      <td><%= ship.class  %></td>
+      <td><%= ship.subclass  %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

@@ -34,6 +34,8 @@ defmodule DreadnoughtHangar.Router do
   
     get "/perks", PerkController, :html_perk_index
     get "/perks/:perk_name", PerkController, :html_perk_info
+    
+    post "/search", SearchController, :search
   
   end
 

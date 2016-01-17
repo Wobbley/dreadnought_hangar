@@ -41,4 +41,13 @@ defmodule DreadnoughtHangar.Ability do
     select: s,
     where: a.name == ^ability_name
   end
+  
+  @doc """
+  Performs a search on ability names with the given search query.
+  """
+  def search(query, search_query) do
+    from(a in query,
+    where: fragment("? LIKE ('%'||?||'%')", a.name, ^search_query),
+    order_by: fragment("similarity(?, ?) DESC", a.name, ^search_query))
+  end
 end

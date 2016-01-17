@@ -67,4 +67,13 @@ defmodule DreadnoughtHangar.Ship do
     select: p,
     where: s.name == ^ship_name
   end
+  
+  @doc """
+  Query to perform a search on ship names given a search query.
+  """
+  def search(query, search_query) do
+    from(s in query,
+    where: fragment("? LIKE ('%'||?||'%')", s.name, ^search_query),
+    order_by: fragment("similarity(?, ?) DESC", s.name, ^search_query))
+  end
 end

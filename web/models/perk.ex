@@ -37,4 +37,13 @@ defmodule DreadnoughtHangar.Perk do
     select: s,
     where: p.name == ^perk_name
   end
+  
+  @doc """
+  Query to perform a search on perk names with the given search query.
+  """
+  def search(query, search_query) do
+    from(p in query,
+    where: fragment("? LIKE ('%'||?||'%')", p.name, ^search_query),
+    order_by: fragment("similarity(?, ?) DESC", p.name, ^search_query))
+  end
 end

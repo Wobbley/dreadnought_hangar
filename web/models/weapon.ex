@@ -41,4 +41,13 @@ defmodule DreadnoughtHangar.Weapon do
     select: s,
     where: w.name == ^weapon_name
   end
+  
+  @doc """
+  Returns query which performs a search on weapon with the given search query.
+  """
+  def search(query, search_query) do
+    from(w in query,
+    where: fragment("? LIKE ('%'||?||'%')", w.name, ^search_query),
+    order_by: fragment("similarity(?, ?) DESC", w.name, ^search_query))
+  end
 end
