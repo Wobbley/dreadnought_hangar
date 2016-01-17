@@ -1,5 +1,7 @@
 defmodule DreadnoughtHangar.Weapon do
   use DreadnoughtHangar.Web, :model
+  
+  alias DreadnoughtHangar.{Ship, ShipWeapon}
 
   schema "weapons" do
     field :name, :string
@@ -10,7 +12,7 @@ defmodule DreadnoughtHangar.Weapon do
 
     timestamps
     
-    has_many :ships_weapons, DreadnoughtHangar.ShipWeapon
+    has_many :ships_weapons, ShipWeapon
     has_many :ships, through: [:ships_weapons, :weapons]
   end
 
@@ -27,5 +29,16 @@ defmodule DreadnoughtHangar.Weapon do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:name)
+  end
+  
+  @doc """
+  Returns a query to retrieve ships that can use a weapon, given its name.
+  """
+  def get_ships(query, weapon_name) do
+    from w in query,
+    join: sw in ShipWeapon, on: w.id == sw.weapon_id,
+    inner_join: s in Ship, on: s.id == sw.ship_id,
+    select: s,
+    where: w.name == ^weapon_name
   end
 end

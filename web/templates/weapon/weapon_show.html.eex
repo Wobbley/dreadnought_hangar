@@ -1,0 +1,41 @@
+<h2>Show ship</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @weapon.name %>
+  </li>
+
+  <li>
+    <strong>Duration:</strong>
+    <%= @weapon.shots %> seconds
+  </li>
+
+  <li>
+    <strong>Cooldown:</strong>
+    <%= @weapon.reload_time %> seconds
+  </li>
+
+  </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Armor</th>
+        <th>Class</th>
+        <th>Subclass</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for ship <- @ships do %>
+      <tr>
+        <td><%= ship.name %></td>
+        <td><%= ship.armor %></td>
+        <td><%= ship.class  %></td>
+        <td><%= ship.subclass  %></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>

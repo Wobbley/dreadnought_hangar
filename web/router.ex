@@ -1,4 +1,8 @@
 defmodule DreadnoughtHangar.Router do
+  @moduledoc """
+  Decides the routing in the application, specifying which uri calls the specific methods
+  in the controllers.
+  """
   use DreadnoughtHangar.Web, :router
 
   pipeline :browser do
@@ -13,6 +17,7 @@ defmodule DreadnoughtHangar.Router do
     plug :accepts, ["json"]
   end
 
+  #URIs for interaction with the html.
   scope "/", DreadnoughtHangar do
     pipe_through :browser # Use the default browser stack
 
@@ -24,12 +29,11 @@ defmodule DreadnoughtHangar.Router do
     get "/abilities", AbilityController, :html_ability_index
     get "/abilities/:ability_name", AbilityController, :html_ability_info
 
-    
+    get "/weapons", WeaponController, :html_weapon_index
+    get "/weapons/:weapon_name", WeaponController, :html_weapon_info
+  
     resources "/perks", PerkController
-    
-    resources "/abilities", AbilityController
-    
-    resources "/weapons", WeaponController
+  
   end
 
   # Other scopes may use custom stacks.

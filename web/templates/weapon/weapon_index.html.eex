@@ -1,0 +1,16 @@
+<h1>Weapons</h1>
+<div class="entitiy-list">
+  <%= for weapon <- @weapons do %>
+    <div class="entitiy">
+      <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">
+        <%= tag(:img, src: weapon.icon_uri, class: "entitiy-image")  %>
+      </a>
+      <div class="info">
+        <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">
+          <div class="name"><%= weapon.name %></div>
+        </a>
+        <div class="details"><%= weapon.shots %> | <%= weapon.reload_time %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
