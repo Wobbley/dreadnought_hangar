@@ -9,6 +9,9 @@ defmodule DreadnoughtHangar.Ability do
     field :icon_uri, :string
 
     timestamps
+    
+    has_many :ships_abilities, DreadnoughtHangar.ShipAbility
+    has_many :ships, through: [:ships_abilities, :abilities]
   end
 
   @required_fields ~w(name type duration cooldown icon_uri)

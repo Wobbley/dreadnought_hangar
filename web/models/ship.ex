@@ -12,7 +12,9 @@ defmodule DreadnoughtHangar.Ship do
     
     has_many :ships_weapons, DreadnoughtHangar.ShipWeapon
     has_many :weapons, through: [:ships_weapons, :ships]
-    
+
+    has_many :ships_abilities, DreadnoughtHangar.ShipAbility
+    has_many :abilities, through: [:ships_abilities, :ships]
   end
 
   @required_fields ~w(name armor class subclass icon_uri)
