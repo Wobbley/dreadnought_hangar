@@ -1,0 +1,16 @@
+<h1>Perks</h1>
+<div class="entitiy-list">
+  <%= for perk <- @perks do %>
+    <div class="entitiy">
+      <a href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">
+        <%= tag(:img, src: perk.icon_uri, class: "entitiy-image")  %>
+      </a>
+      <div class="info">
+        <a href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">
+          <div class="name"><%= perk.name %></div>
+        </a>
+        <div class="details"><%= perk.type %> </div>
+      </div>
+    </div>
+  <% end %>
+</div>

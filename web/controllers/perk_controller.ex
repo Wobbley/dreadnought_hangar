@@ -4,64 +4,22 @@ defmodule DreadnoughtHangar.PerkController do
   alias DreadnoughtHangar.Perk
 
   plug :scrub_params, "perk" when action in [:create, :update]
-
-  def index(conn, _params) do
+  
+  @doc """
+  Returns all perks as html.
+  """
+  def html_perk_index(conn, _params) do
     perks = Repo.all(Perk)
-    render(conn, "index.html", perks: perks)
+    render(conn, "perk_index.html", perks: perks)
   end
 
-  def new(conn, _params) do
-    changeset = Perk.changeset(%Perk{})
-    render(conn, "new.html", changeset: changeset)
+  @doc """
+  Returns perk and list of ships that can use the perk as html, given a perk name.
+  """
+  def html_perk_info(conn, %{"perk_name" => perk_name}) do
+    perk = Repo.get_by(Perk, name: perk_name)
+    ships = Perk |> Perk.get_ships(perk_name) |> Repo.all
+    render(conn, "perk_info.html", perk: perk, ships: ships)
   end
-
-  def create(conn, %{"perk" => perk_params}) do
-    changeset = Perk.changeset(%Perk{}, perk_params)
-
-    case Repo.insert(changeset) do
-      {:ok, _perk} ->
-        conn
-        |> put_flash(:info, "Perk created successfully.")
-        |> redirect(to: perk_path(conn, :index))
-      {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
-  end
-
-  def show(conn, %{"id" => id}) do
-    perk = Repo.get!(Perk, id)
-    render(conn, "show.html", perk: perk)
-  end
-
-  def edit(conn, %{"id" => id}) do
-    perk = Repo.get!(Perk, id)
-    changeset = Perk.changeset(perk)
-    render(conn, "edit.html", perk: perk, changeset: changeset)
-  end
-
-  def update(conn, %{"id" => id, "perk" => perk_params}) do
-    perk = Repo.get!(Perk, id)
-    changeset = Perk.changeset(perk, perk_params)
-
-    case Repo.update(changeset) do
-      {:ok, perk} ->
-        conn
-        |> put_flash(:info, "Perk updated successfully.")
-        |> redirect(to: perk_path(conn, :show, perk))
-      {:error, changeset} ->
-        render(conn, "edit.html", perk: perk, changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    perk = Repo.get!(Perk, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
-    Repo.delete!(perk)
-
-    conn
-    |> put_flash(:info, "Perk deleted successfully.")
-    |> redirect(to: perk_path(conn, :index))
-  end
+ 
 end

@@ -32,7 +32,8 @@ defmodule DreadnoughtHangar.Router do
     get "/weapons", WeaponController, :html_weapon_index
     get "/weapons/:weapon_name", WeaponController, :html_weapon_info
   
-    resources "/perks", PerkController
+    get "/perks", PerkController, :html_perk_index
+    get "/perks/:perk_name", PerkController, :html_perk_info
   
   end
 
