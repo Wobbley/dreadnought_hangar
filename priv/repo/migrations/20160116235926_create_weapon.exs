@@ -3,7 +3,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateWeapon do
 
   def change do
     create table(:weapons) do
-      add :name, :string
+      add :name, :citext
       add :type, :string
       add :shots, :integer
       add :reload_time, :integer

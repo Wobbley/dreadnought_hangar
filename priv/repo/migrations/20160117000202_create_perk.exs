@@ -3,7 +3,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreatePerk do
 
   def change do
     create table(:perks) do
-      add :name, :string
+      add :name, :citext
       add :type, :string
       add :icon_uri, :string
 

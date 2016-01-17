@@ -3,7 +3,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateAbility do
 
   def change do
     create table(:abilities) do
-      add :name, :string
+      add :name, :citext
       add :type, :string
       add :duration, :integer
       add :cooldown, :integer

@@ -3,7 +3,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateShip do
 
   def change do
     create table(:ships) do
-      add :name, :string
+      add :name, :citext
       add :armor, :integer
       add :class, :string
       add :subclass, :string
