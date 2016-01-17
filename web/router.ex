@@ -20,6 +20,9 @@ defmodule DreadnoughtHangar.Router do
     
     get "/ships", ShipController, :html_ship_index
     get "/ships/:ship_name", ShipController, :html_ship_info
+    
+    get "/abilities", AbilityController, :html_ability_index
+    get "/abilities/:ability_name", AbilityController, :html_ability_info
 
     
     resources "/perks", PerkController

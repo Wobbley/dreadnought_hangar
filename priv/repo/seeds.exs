@@ -10,7 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias DreadnoughtHangar.{Repo, Ship}
+alias DreadnoughtHangar.{Repo, Ship, Ability, Weapon, ShipWeapon, ShipAbility}
 
 #Corvettes
 Repo.insert!(%Ship{id: 1, name: "Defiant", armor: 9001, class: "Corvette", subclass: "Light", icon_uri: "http://dreadnoughthangar.com/images/ships/corvette_light.png"})
@@ -36,3 +36,13 @@ Repo.insert!(%Ship{id: 12, name: "Koschei", armor: 9001, class: "Tactical Cruise
 Repo.insert!(%Ship{id: 13, name: "Nox", armor: 9001, class: "Artillery Cruiser", subclass: "Light", icon_uri: "http://dreadnoughthangar.com/images/ships/artillery_light.png"})
 Repo.insert!(%Ship{id: 14, name: "Svarog", armor: 9001, class: "Artillery Cruiser", subclass: "Medium", icon_uri: "http://dreadnoughthangar.com/images/ships/artillery_medium.png"})
 Repo.insert!(%Ship{id: 15, name: "Vigilant", armor: 9001, class: "Artillery Cruiser", subclass: "Heavy", icon_uri: "http://dreadnoughthangar.com/images/ships/artillery_heavy.png"})
+
+Repo.insert!(%Ability{id: 1, type: "Primary", name: "Beam Amplifier", cooldown: 42, duration: 30, icon_uri: "http://dreadnoughthangar.com/images/abilities/warp.png"})
+Repo.insert!(%Ability{id: 2, type: "Secondary", name: "Ram", cooldown: 12, duration: 25, icon_uri: "http://dreadnoughthangar.com/images/abilities/warp.png"})
+Repo.insert!(%Weapon{id: 1, type: "Primary", name: "Light Rocket Turret", reload_time: 5, shots: 20, icon_uri: "http://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
+Repo.insert!(%Weapon{id: 2, type: "	Secondary", name: "Beam Turret", reload_time: 5, shots: 0, icon_uri: "http://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
+
+Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 1})
+Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 2})
+Repo.insert!(%ShipAbility{ship_id: 1, ability_id: 1})
+Repo.insert!(%ShipAbility{ship_id: 1, ability_id: 2})

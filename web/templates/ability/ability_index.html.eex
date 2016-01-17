@@ -1,0 +1,16 @@
+<h1>Abilities</h1>
+<div class="entitiy-list">
+  <%= for ability <- @abilities do %>
+    <div class="entitiy">
+      <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">
+        <%= tag(:img, src: ability.icon_uri, class: "entitiy-image")  %>
+      </a>
+      <div class="info">
+        <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">
+          <div class="name"><%= ability.name %></div>
+        </a>
+        <div class="details"><%= ability.type %> | <%= ability.duration %> | <%= ability.cooldown %> </div>
+      </div>
+    </div>
+  <% end %>
+</div>

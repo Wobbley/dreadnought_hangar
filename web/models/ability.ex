@@ -1,5 +1,7 @@
 defmodule DreadnoughtHangar.Ability do
   use DreadnoughtHangar.Web, :model
+  
+  alias DreadnoughtHangar.{Ship, ShipAbility}
 
   schema "abilities" do
     field :name, :string
@@ -10,7 +12,7 @@ defmodule DreadnoughtHangar.Ability do
 
     timestamps
     
-    has_many :ships_abilities, DreadnoughtHangar.ShipAbility
+    has_many :ships_abilities, ShipAbility
     has_many :ships, through: [:ships_abilities, :abilities]
   end
 
@@ -27,5 +29,16 @@ defmodule DreadnoughtHangar.Ability do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:name)
+  end
+  
+  @doc """
+  Returns the query to find all ships that can use an ability, given an ability name.
+  """
+  def get_ships(query, ability_name) do
+    from a in query,
+    join: sa in ShipAbility, on: a.id == sa.ability_id,
+    inner_join: s in Ship, on: s.id == sa.ship_id,
+    select: s,
+    where: a.name == ^ability_name
   end
 end

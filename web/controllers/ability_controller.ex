@@ -1,67 +1,26 @@
 defmodule DreadnoughtHangar.AbilityController do
   use DreadnoughtHangar.Web, :controller
 
-  alias DreadnoughtHangar.Ability
+  alias DreadnoughtHangar.{Ability, Ship}
 
   plug :scrub_params, "ability" when action in [:create, :update]
 
-  def index(conn, _params) do
+  @doc """
+  Returns all abilities as html
+  """
+  def html_ability_index(conn, _params) do
     abilities = Repo.all(Ability)
-    render(conn, "index.html", abilities: abilities)
+    render(conn, "ability_index.html", abilities: abilities)
   end
-
-  def new(conn, _params) do
-    changeset = Ability.changeset(%Ability{})
-    render(conn, "new.html", changeset: changeset)
-  end
-
-  def create(conn, %{"ability" => ability_params}) do
-    changeset = Ability.changeset(%Ability{}, ability_params)
-
-    case Repo.insert(changeset) do
-      {:ok, _ability} ->
-        conn
-        |> put_flash(:info, "Ability created successfully.")
-        |> redirect(to: ability_path(conn, :index))
-      {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
-  end
-
-  def show(conn, %{"id" => id}) do
-    ability = Repo.get!(Ability, id)
-    render(conn, "show.html", ability: ability)
-  end
-
-  def edit(conn, %{"id" => id}) do
-    ability = Repo.get!(Ability, id)
-    changeset = Ability.changeset(ability)
-    render(conn, "edit.html", ability: ability, changeset: changeset)
-  end
-
-  def update(conn, %{"id" => id, "ability" => ability_params}) do
-    ability = Repo.get!(Ability, id)
-    changeset = Ability.changeset(ability, ability_params)
-
-    case Repo.update(changeset) do
-      {:ok, ability} ->
-        conn
-        |> put_flash(:info, "Ability updated successfully.")
-        |> redirect(to: ability_path(conn, :show, ability))
-      {:error, changeset} ->
-        render(conn, "edit.html", ability: ability, changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    ability = Repo.get!(Ability, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
-    Repo.delete!(ability)
-
-    conn
-    |> put_flash(:info, "Ability deleted successfully.")
-    |> redirect(to: ability_path(conn, :index))
+  
+  @doc """
+  Takes an ability name.
+  Returns information about a specific ability, and a list
+  of ships that can use the ability as html.
+  """
+  def html_ability_info(conn, %{"ability_name" => ability_name}) do
+    ability = Repo.get_by(Ability, name: ability_name)
+    ships = Ability |> Ability.get_ships(ability_name) |> Repo.all
+    render(conn, "ability_show.html", ability: ability, ships: ships)
   end
 end
