@@ -9,6 +9,9 @@ defmodule DreadnoughtHangar.Weapon do
     field :icon_uri, :integer
 
     timestamps
+    
+    has_many :ships_weapons, DreadnoughtHangar.ShipWeapon
+    has_many :ships, through: [:ships_weapons, :weapons]
   end
 
   @required_fields ~w(name type shots reload_time icon_uri)
