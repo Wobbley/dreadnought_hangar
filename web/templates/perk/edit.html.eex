@@ -1,0 +1,6 @@
+<h2>Edit perk</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: perk_path(@conn, :update, @perk) %>
+
+<%= link "Back", to: perk_path(@conn, :index) %>
