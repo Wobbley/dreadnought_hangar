@@ -11,6 +11,7 @@
 # and so on) as they will fail if something goes wrong.
 
 alias DreadnoughtHangar.{Repo, Ship}
+
 #Corvettes
 Repo.insert!(%Ship{id: 1, name: "Defiant", armor: 9001, class: "Corvette", subclass: "Light", icon_uri: "http://dreadnoughthangar.com/images/ships/corvette_light.png"})
 Repo.insert!(%Ship{id: 2, name: "Fulgora", armor: 9001, class: "Corvette", subclass: "Medium", icon_uri: "http://dreadnoughthangar.com/images/ships/corvette_medium.png"})

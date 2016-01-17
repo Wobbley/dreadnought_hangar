@@ -1,0 +1,59 @@
+<h1><%= @ship.name %></h1>
+
+<ul>
+  <li>
+    <strong>Armor:</strong>
+    <%= @ship.armor %>
+  </li>
+
+  <li>
+    <strong>Class:</strong>
+    <%= @ship.class %>
+  </li>
+  <li>
+    <strong>Subclass:</strong>
+    <%= @ship.subclass %>
+  </li>
+</ul>
+
+<%= tag(:img, src: @ship.icon_uri, class: "entitiy-image")  %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ammo</th>
+        <th>Reload time</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for weapon <- @weapons do %>
+      <tr>
+        <td><%= weapon.name %></td>
+        <td><%= weapon.shots %></td>
+        <td><%= weapon.reload_time %></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Cooldown</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for ability <- @abilities do %>
+      <tr>
+        <td><%= ability.name %></td>
+        <td><%= ability.duration %></td>
+        <td><%= ability.cooldown %></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>

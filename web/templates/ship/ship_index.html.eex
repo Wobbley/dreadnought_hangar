@@ -1,0 +1,12 @@
+<h1>Ships</h1>
+<div class="entitiy-list">
+  <%= for ship <- @ships do %>
+    <div class="entitiy">
+        <%= tag(:img, src: ship.icon_uri, class: "entitiy-image")  %>
+      <div class="info">
+          <div class="name"><%= ship.name %></div>
+        <div class="details"><%= ship.class %> | <%= ship.subclass %></div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -17,6 +17,16 @@ defmodule DreadnoughtHangar.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    
+    get "/ships", ShipController, :html_ship_index
+    get "/ships/:ship_name", ShipController, :html_ship_info
+
+    
+    resources "/perks", PerkController
+    
+    resources "/abilities", AbilityController
+    
+    resources "/weapons", WeaponController
   end
 
   # Other scopes may use custom stacks.
