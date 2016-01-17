@@ -7,7 +7,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateWeapon do
       add :type, :string
       add :shots, :integer
       add :reload_time, :integer
-      add :icon_uri, :integer
+      add :icon_uri, :string
 
       timestamps
     end

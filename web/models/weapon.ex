@@ -6,7 +6,7 @@ defmodule DreadnoughtHangar.Weapon do
     field :type, :string
     field :shots, :integer
     field :reload_time, :integer
-    field :icon_uri, :integer
+    field :icon_uri, :string
 
     timestamps
     
