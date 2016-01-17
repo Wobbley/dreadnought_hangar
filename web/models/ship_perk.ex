@@ -1,18 +1,14 @@
-defmodule DreadnoughtHangar.Perk do
+defmodule DreadnoughtHangar.ShipPerk do
   use DreadnoughtHangar.Web, :model
 
-  schema "perks" do
-    field :name, :string
-    field :type, :string
-    field :icon_uri, :string
+  schema "ships_perks" do
+    belongs_to :ship, DreadnoughtHangar.Ship
+    belongs_to :perk, DreadnoughtHangar.Perk
 
     timestamps
-    
-    has_many :ships_perks, DreadnoughtHangar.ShipPerk
-    has_many :ships, through: [:ships_perks, :perks]
   end
 
-  @required_fields ~w(name type icon_uri)
+  @required_fields ~w()
   @optional_fields ~w()
 
   @doc """
@@ -24,6 +20,5 @@ defmodule DreadnoughtHangar.Perk do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> unique_constraint(:name)
   end
 end
