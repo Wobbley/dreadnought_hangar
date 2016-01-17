@@ -23,10 +23,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <!--<a class="navbar-brand" href="#">
             <span><img alt="Brand" src="/images/log_small.png"></span>
             Dreadnought Hangar
-            </a>
+            </a>-->
           </div>
           
           <!-- Collect the nav links, forms, and other content for toggling -->
