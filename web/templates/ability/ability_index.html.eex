@@ -1,9 +1,9 @@
 <h1>Abilities</h1>
-<div class="entitiy-list">
+<div class="entity-list">
   <%= for ability <- @abilities do %>
-    <div class="entitiy">
+    <div class="entity">
       <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">
-        <%= tag(:img, src: ability.icon_uri, class: "entitiy-image")  %>
+        <%= tag(:img, src: ability.icon_uri, class: "entity-image")  %>
       </a>
       <div class="info">
         <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">

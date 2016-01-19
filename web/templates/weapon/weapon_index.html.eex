@@ -1,9 +1,9 @@
 <h1>Weapons</h1>
-<div class="entitiy-list">
+<div class="entity-list">
   <%= for weapon <- @weapons do %>
-    <div class="entitiy">
+    <div class="entity">
       <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">
-        <%= tag(:img, src: weapon.icon_uri, class: "entitiy-image")  %>
+        <%= tag(:img, src: weapon.icon_uri, class: "entity-image")  %>
       </a>
       <div class="info">
         <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">

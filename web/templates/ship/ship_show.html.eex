@@ -16,7 +16,7 @@
   </li>
 </ul>
 
-<%= tag(:img, src: @ship.icon_uri, class: "entitiy-image")  %>
+<%= tag(:img, src: @ship.icon_uri, class: "entity-image")  %>
 
   <table class="table">
     <thead>
