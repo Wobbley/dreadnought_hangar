@@ -12,6 +12,9 @@ const sortEntities = () => {
     });
 };
 
-selectSort.addEventListener("change", sortEntities);
+if (selectSort != null) {
+  selectSort.addEventListener("change", sortEntities);
+}
+
 
 export default sortEntities;
