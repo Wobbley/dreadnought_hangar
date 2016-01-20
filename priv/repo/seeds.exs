@@ -40,7 +40,7 @@ Repo.insert!(%Ship{id: 15, name: "Vigilant", armor: 9001, class: "Artillery Crui
 Repo.insert!(%Ability{id: 1, type: "Primary", name: "Beam Amplifier", cooldown: 42, duration: 30, icon_uri: "http://dreadnoughthangar.com/images/abilities/warp.png"})
 Repo.insert!(%Ability{id: 2, type: "Secondary", name: "Ram", cooldown: 12, duration: 25, icon_uri: "http://dreadnoughthangar.com/images/abilities/warp.png"})
 Repo.insert!(%Weapon{id: 1, type: "Primary", name: "Light Rocket Turret", reload_time: 5, shots: 20, icon_uri: "http://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
-Repo.insert!(%Weapon{id: 2, type: "	Secondary", name: "Beam Turret", reload_time: 5, shots: 0, icon_uri: "http://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
+Repo.insert!(%Weapon{id: 2, type: "Secondary", name: "Beam Turret", reload_time: 5, shots: 0, icon_uri: "http://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
 
 Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 1})
 Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 2})
