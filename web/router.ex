@@ -49,6 +49,10 @@ defmodule DreadnoughtHangar.Router do
     get "/ships/weapons/:ship_name", WeaponController, :json_weapons_by_ship
     get "/ships/abilities/:ship_name", AbilityController, :json_abilities_by_ship
     get "/ships/perks/:ship_name", PerkController, :json_perks_by_ship
+    
+    get "/weapons", WeaponController, :json_weapon_index
+    get "/weapons/:weapon_name", WeaponController, :json_weapon_show
+    get "/weapons/ships/:weapon_name", ShipController, :json_ships_by_weapon
       
   end
 end
