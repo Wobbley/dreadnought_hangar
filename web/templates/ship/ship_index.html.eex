@@ -11,11 +11,11 @@
 <div class="entity-list">
   <%= for ship <- @ships do %>
     <div class="entity">
-      <a href="<%= ship_path(@conn, :html_ship_info, ship.name) %>">
+      <a href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">
         <%= tag(:img, src: ship.icon_uri, class: "entity-image")  %>
       </a>
       <div class="info">
-        <a href="<%= ship_path(@conn, :html_ship_info, ship.name) %>">
+        <a href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">
           <div class="name"><%= ship.name %></div>
         </a>
         <div class="details">

@@ -25,7 +25,7 @@ defmodule DreadnoughtHangar.Router do
     get "/loadout", PageController, :loadout
     
     get "/ships", ShipController, :html_ship_index
-    get "/ships/:ship_name", ShipController, :html_ship_info
+    get "/ships/:ship_name", ShipController, :html_ship_show
     
     get "/abilities", AbilityController, :html_ability_index
     get "/abilities/:ability_name", AbilityController, :html_ability_info
@@ -40,8 +40,15 @@ defmodule DreadnoughtHangar.Router do
   
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", DreadnoughtHangar do
-  #   pipe_through :api
-  # end
+  #URIs for interaction with the json api.
+  scope "/api", DreadnoughtHangar do
+    pipe_through :api #Use the default api stack
+    
+    get "/ships", ShipController, :json_ship_index
+    get "/ships/:ship_name", ShipController, :json_ship_show
+    get "/ships/weapons/:ship_name", WeaponController, :json_weapons_by_ship
+    get "/ships/abilities/:ship_name", AbilityController, :json_abilities_by_ship
+    get "/ships/perks/:ship_name", PerkController, :json_perks_by_ship
+      
+  end
 end
