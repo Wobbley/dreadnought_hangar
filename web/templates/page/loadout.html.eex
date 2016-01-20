@@ -1,0 +1,8 @@
+<dreadnought-loadout>
+Loading...
+</dreadnought-loadout>
+
+<!-- Vendor files -->
+<script src="/js/loadout/vendor.js"></script>
+<!-- App script -->
+<script src="/js/loadout/app.js"></script>

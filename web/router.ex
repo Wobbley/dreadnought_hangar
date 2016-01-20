@@ -22,6 +22,7 @@ defmodule DreadnoughtHangar.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/loadout", PageController, :loadout
     
     get "/ships", ShipController, :html_ship_index
     get "/ships/:ship_name", ShipController, :html_ship_info
