@@ -57,5 +57,10 @@ defmodule DreadnoughtHangar.Router do
     get "/abilities", AbilityController, :json_ability_index
     get "/abilities/:ability_name", AbilityController, :json_ability_show
     get "/abilities/ships/:ability_name", ShipController, :json_ships_by_ability
+    
+        get "/perks", PerkController, :json_perk_index
+    get "/perks/:perk_name", PerkController, :json_perk_show
+    get "/perks/ships/:perk_name", PerkController, :json_ships_by_perk
+  
   end
 end
