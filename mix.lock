@@ -1,4 +1,6 @@
-%{"connection": {:hex, :connection, "1.0.2"},
+%{"beaker": {:hex, :beaker, "1.2.0"},
+  "bureaucrat": {:hex, :bureaucrat, "0.1.2"},
+  "connection": {:hex, :connection, "1.0.2"},
   "cowboy": {:hex, :cowboy, "1.0.4"},
   "cowlib": {:hex, :cowlib, "1.0.2"},
   "decimal": {:hex, :decimal, "1.1.1"},

@@ -16,6 +16,9 @@ defmodule DreadnoughtHangar.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+  
+  #Metrics
+  forward "/beaker", Beaker.Web
 
   #URIs for interaction with the html.
   scope "/", DreadnoughtHangar do
@@ -58,7 +61,7 @@ defmodule DreadnoughtHangar.Router do
     get "/abilities/:ability_name", AbilityController, :json_ability_show
     get "/abilities/ships/:ability_name", ShipController, :json_ships_by_ability
     
-        get "/perks", PerkController, :json_perk_index
+    get "/perks", PerkController, :json_perk_index
     get "/perks/:perk_name", PerkController, :json_perk_show
     get "/perks/ships/:perk_name", PerkController, :json_ships_by_perk
   

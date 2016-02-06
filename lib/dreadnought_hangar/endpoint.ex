@@ -3,6 +3,9 @@ defmodule DreadnoughtHangar.Endpoint do
 
   socket "/socket", DreadnoughtHangar.UserSocket
 
+  #Needs to be plugged in first for as accurate results as possible
+  plug Beaker.Integrations.Phoenix
+  
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
