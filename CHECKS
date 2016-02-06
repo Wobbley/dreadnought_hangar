@@ -1,0 +1,8 @@
+#These are default values, so not really neccessary
+WAIT=5     # Wait 5 seconds
+TIMEOUT=30  # Timeout after a minute
+ATTEMPTS=5  # attempt checks 10 times
+
+/ships  Ships
+/weapons  Weapons
+/images/ships/destroyer_light.png
