@@ -1,8 +1,0 @@
-#These are default values, so not really neccessary
-WAIT=5     # Wait 5 seconds
-TIMEOUT=30  # Timeout after a minute
-ATTEMPTS=5  # attempt checks 10 times
-
-https://dreadnoughthangar.com/ships  Ships
-https://dreadnoughthangar.com/weapons  Weapons
-https://dreadnoughthangar.com/images/ships/destroyer_light.png
