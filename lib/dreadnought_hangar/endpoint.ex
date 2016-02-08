@@ -38,5 +38,6 @@ defmodule DreadnoughtHangar.Endpoint do
     key: "_dreadnought_hangar_key",
     signing_salt: "5G9MGEU7"
 
+  plug CORSPlug
   plug DreadnoughtHangar.Router
 end
