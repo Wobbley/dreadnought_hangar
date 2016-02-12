@@ -1,19 +1,25 @@
-# DreadnoughtHangar
+# Dreadnought Hangar
 
-To start your Phoenix app:
+Dreadnought Hangar is built with the [Phoenix Framework](http://www.phoenixframework.org/) which consists of Elixir, HTML, CSS, and Javascript.
 
-  1. Install dependencies with `mix deps.get`
-  2. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  3. Start Phoenix endpoint with `mix phoenix.server`
+## Getting Started
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+### Requirements
+To be able to run Dreadnought Hangar the following is required:
+* Elixir
+* Erlang
+* Phoenix
+* Node
+* PostgreSQL (Set the username and password to 'postgres')
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+Instructions on how all of these are installed can be found [here](http://www.phoenixframework.org/docs/installation).
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Up and Running
+Navigate to the folder containing the git repo and do the following:
+* Make sure PostgreSQL is running
+* Run 'mix deps.get' (Installs Elixir/Erlang dependencies)
+* Run 'npm install' (Install Node dependencies)
+* Run 'mix ecto.create' (Creates the database in postgreSQL)
+* Run 'mix ecto.migrate' (Runs the various SQL scripts to create tables, indices and so on)
+* The site should now be located at [`localhost:4000`](http://localhost:4000)
+* (Optional) Use 'mix run priv/repo/seeds.exs' to insert data. It currently only contains ships, and 2 made up abilities/weapons.
