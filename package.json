@@ -1,16 +1,16 @@
 {
-  "repository": {
-  },
+  "repository": {},
   "dependencies": {
     "babel-brunch": "^6.0.0",
+    "bootstrap-sass": "^3.3.6",
     "brunch": "^2.1.1",
     "clean-css-brunch": ">= 1.0 < 1.8",
     "css-brunch": ">= 1.0 < 1.8",
+    "foundation-sites": "^6.1.2",
     "javascript-brunch": ">= 1.0 < 1.8",
-    "uglify-js-brunch": ">= 1.0 < 1.8",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
     "sass-brunch": "^1.9.1",
-    "bootstrap-sass": "^3.3.6"
+    "uglify-js-brunch": ">= 1.0 < 1.8"
   }
 }
