@@ -1,7 +1,7 @@
 defmodule DreadnoughtHangar.PerkController do
   use DreadnoughtHangar.Web, :controller
 
-  alias DreadnoughtHangar.Perk
+  alias DreadnoughtHangar.{Perk, Ship}
 
   plug :scrub_params, "perk" when action in [:create, :update]
   
