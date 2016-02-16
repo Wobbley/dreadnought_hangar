@@ -9,7 +9,7 @@ To be able to run Dreadnought Hangar the following is required:
 * Elixir
 * Erlang
 * Phoenix
-* Node
+* Node (Version 5 or higher)
 * PostgreSQL (Set the username and password to 'postgres')
 
 Instructions on how all of these are installed can be found [here](http://www.phoenixframework.org/docs/installation).
