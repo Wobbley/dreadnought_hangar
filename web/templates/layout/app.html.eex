@@ -12,46 +12,35 @@
   </head>
 
   <body>
-    <div class="container">
-      <! -- Fixed navbar -->
-      <nav class="navbar navbar-default">
-        <div class=""container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!--<a class="navbar-brand" href="#">
-            <span><img alt="Brand" src="/images/log_small.png"></span>
-            Dreadnought Hangar
-            </a>-->
-          </div>
-          
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= ship_path(@conn, :html_ship_index) %>">Ships</a></li>
-                  <li><a href="<%= weapon_path(@conn, :html_weapon_index) %>">Weapons</a></li>
-                  <li><a href="<%= ability_path(@conn, :html_ability_index) %>">Abilities</a></li>
-                  <li><a href="<%= perk_path(@conn, :html_perk_index) %>">Perks</a></li>
-                </ul>
-              </li>
-              <li><a href="/loadout">Loadout Builder</a></li>
-              <li><a href="#">API </a></li>
-              <li><a href="#">Forums</a></li>
-              </ul>
-              <%= form_for @conn, search_path(@conn, :search), [as: :search, class: "navbar-form navbar-right", role: "search"], fn f -> %>
-                   <%= text_input f, :query, class: "form-control" %>
-                 <%= submit "Search", class: "btn btn-default" %>
-               <% end %>
-           </div>
-         </div>
-       </nav>
+    <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+    
+    <div class="top-bar" id="example-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Dreadnought Hangar</li>
+          <li>
+            <a href="#">Database</a>
+            <ul class="menu vertical">
+              <li><a href="<%= ability_path(@conn, :html_ability_index) %>">Abilities</a></li>
+              <li><a href="<%= perk_path(@conn, :html_perk_index) %>">Perks</a></li>
+              <li><a href="<%= ship_path(@conn, :html_ship_index) %>">Ships</a></li>
+              <li><a href="<%= weapon_path(@conn, :html_weapon_index) %>">Weapons</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="secondary button">Search</button></li>
+        </ul>
+      </div>
+    </div>
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
@@ -62,6 +51,7 @@
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
+    <script>$(document).foundation();</script>
     
         
     <!-- Google Analytics -->

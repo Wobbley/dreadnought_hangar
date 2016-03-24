@@ -1,27 +1,21 @@
-<h1>Ships</h1>
-<div>
-  Filter and Sort
-
-<select id="sort" class="dropdown">
-  <option value="class">Class</option>
-  <option value="name">Name</option>
-  <option value="subclass">Sub-Class</option>
-</select>
-
-<div class="entity-list">
+<div class="row ship-index">
+  <div class="small-12 large-12 columns">
+    <h1>Hangar</h1>
+    <p>Welcome to the hangar captain! In here you can view all the ships that can be attained in Dreadnought.</p>
+  </div>
+</div>
+<div class="row ship-index">
   <%= for ship <- @ships do %>
-    <div class="entity">
-      <a href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">
-        <%= tag(:img, src: ship.icon_uri, class: "entity-image")  %>
-      </a>
-      <div class="info">
-        <a href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">
-          <div class="name"><%= ship.name %></div>
-        </a>
-        <div class="details">
-          <span class="class"><%= ship.class %> </span> | <span class="subclass"><%= ship.subclass %></span>
-        </div>
-      </div>
-    </div>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: ship.icon_uri)  %>
+    <h4><%= ship.name %></h4>
+    
+    <ul>
+      <li>Class: <%= ship.class %></li>
+      <li>Subclass: <%= ship.subclass %></li>
+    </ul>
+    <a class="secondary button" href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">Ship Report</a>
+  </div>
   <% end %>
 </div>
+

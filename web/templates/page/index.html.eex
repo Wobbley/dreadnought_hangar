@@ -1,5 +1,29 @@
-<div class="jumbotron">
-  <h2>Welcome to Dreadnought Hangar!</h2>
-  <p class="lead">We are currently looking for someone to do the site design. 
-  If you are interested contact Wobbley on Reddit or on e-mail: contact@dreadnoughthangar.com</p>
+<div class="row index">
+  <div class="small-12 large-12 columns">
+    <h1>Good news everybody!</h1>
+    <p>I'm dishonest, and a dishonest man you can always trust to be dishonest. honestly. it's the honest ones you want to watch out for, because you can never predict when they're going to do something incredibly... stupid. we had two bags of grass, seventy-five pellets of mescaline, five sheets of high-powered blotter acid, a saltshaker half-full of cocaine, and a whole galaxy of multi-colored uppers, downers, screamers, laughers... giddy-up... no, no this way... good horsey. well, then, i confess, it is my intention to commandeer one of these ships, pick up a crew in tortuga, raid, pillage, plunder and otherwise pilfer my weasely black guts out. we're not sheep! forget about it" is, like, if you agree with someone, you know, like "raquel welch is one great piece of ass. forget about it!" but then, if you disagree, like "a lincoln is better than a cadillac? </p>
+    <a class="secondary button" href="#">Learn more!</a>
+  </div>
+</div>
+<div class="row index">
+  <div class="small-12 large-6 columns">
+    <h3>Sick build!</h3>
+    <p>Bane was a member of the League of Shadows. And then he was excommunicated. And any man who is too extreme for Ra's Al Ghul, is not to be trifled with.</p>
+    <a class="secondary button" href="#">Check it out!</a>
+  </div>
+  <div class="small-12 large-6 column">
+    <h3>Tacticalz!</h3>
+    <p>The first time I stole so that I wouldn't starve, yes. I lost many assumptions about the simple nature of right and wrong. And when I traveled I learned the fear before a crime and the thrill of success. But I never became one of them.</p>
+    <a class="secondary button" href="#">Batman</a>
+  </div>
+  <div class="small-12 large-6 column">
+    <h3>Bane smash!</h3>
+    <p>Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.</p>
+    <a class="secondary button" href="#">Uh-oh</a>
+  </div>
+  <div class="small-12 large-6 column">
+    <h3>Latest Patch Notes</h3>
+    <p>Never underestimate Gotham City. People get mugged coming home from work every day of the week. Sometimes things just go bad.</p>
+    <a class="secondary button" href="#">Nerf bats</a>
+  </div>
 </div>

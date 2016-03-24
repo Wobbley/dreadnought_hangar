@@ -16,7 +16,8 @@ exports.config = {
       order: {
         before: [
           "web/static/vendor/js/ajquery-2.2.0.min.js",
-          "web/static/vendor/js/bootstrap.min.js"
+          "web/static/vendor/js/what-input.min.js",
+          "web/static/vendor/js/zfoundation.min.js"
         ]
       }
     },
