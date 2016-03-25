@@ -1,16 +1,20 @@
-<h1>Perks</h1>
-<div class="entity-list">
+<div class="row ship-index">
+  <div class="small-12 large-12 columns">
+    <h1>Perks</h1>
+    <p>MAD PERKS</p>
+  </div>
+</div>
+<div class="row ship-index">
   <%= for perk <- @perks do %>
-    <div class="entity">
-      <a href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">
-        <%= tag(:img, src: perk.icon_uri, class: "entity-image")  %>
-      </a>
-      <div class="info">
-        <a href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">
-          <div class="name"><%= perk.name %></div>
-        </a>
-        <div class="details"><%= perk.type %> </div>
-      </div>
-    </div>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: perk.icon_uri)  %>
+    <h4><%= perk.name %></h4>
+    <ul>
+      <li>Type: <%= perk.type %></li>
+      <li>Cost: 500 CR | 1000 SR</li>
+      <li>Unlock: 21 </li>
+    </ul>
+    <a class="secondary button" href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">Perk Details</a>
+  </div>
   <% end %>
 </div>

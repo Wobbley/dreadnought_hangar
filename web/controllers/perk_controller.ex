@@ -19,7 +19,7 @@ defmodule DreadnoughtHangar.PerkController do
   def html_perk_info(conn, %{"perk_name" => perk_name}) do
     perk = Repo.get_by(Perk, name: perk_name)
     ships = Perk |> Perk.get_ships(perk_name) |> Repo.all
-    render(conn, "perk_info.html", perk: perk, ships: ships)
+    render(conn, "perk_show.html", perk: perk, ships: ships)
   end
   
   @doc """

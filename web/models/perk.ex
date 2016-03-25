@@ -1,6 +1,8 @@
 defmodule DreadnoughtHangar.Perk do
   use DreadnoughtHangar.Web, :model
 
+  alias DreadnoughtHangar.{Ship, ShipPerk}
+  
   schema "perks" do
     field :name, :string
     field :type, :string
