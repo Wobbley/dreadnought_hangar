@@ -10,7 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias DreadnoughtHangar.{Repo, Ship, Ability, Weapon, ShipWeapon, ShipAbility}
+alias DreadnoughtHangar.{Repo, Ship, Ability, Weapon, ShipWeapon, ShipAbility, Perk}
 
 #Corvettes
 Repo.insert!(%Ship{id: 1, name: "Defiant", armor: 9001, class: "Corvette", subclass: "Light", icon_uri: "https://dreadnoughthangar.com/images/ships/corvette_light.png"})
@@ -41,6 +41,8 @@ Repo.insert!(%Ability{id: 1, type: "Primary", name: "Beam Amplifier", cooldown: 
 Repo.insert!(%Ability{id: 2, type: "Secondary", name: "Ram", cooldown: 12, duration: 25, icon_uri: "https://dreadnoughthangar.com/images/abilities/warp.png"})
 Repo.insert!(%Weapon{id: 1, type: "Primary", name: "Light Rocket Turret", reload_time: 5, shots: 20, icon_uri: "https://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
 Repo.insert!(%Weapon{id: 2, type: "Secondary", name: "Beam Turret", reload_time: 5, shots: 0, icon_uri: "https://dreadnoughthangar.com/images/weapons/rocket_turret.png"})
+
+Repo.insert!(%Perk{id: 1, type: "Engineering", name: "It's a trap!"})
 
 Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 1})
 Repo.insert!(%ShipWeapon{ship_id: 1, weapon_id: 2})
