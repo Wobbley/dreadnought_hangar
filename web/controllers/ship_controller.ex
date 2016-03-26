@@ -1,7 +1,7 @@
 defmodule DreadnoughtHangar.ShipController do
   use DreadnoughtHangar.Web, :controller
 
-  alias DreadnoughtHangar.Ship
+  alias DreadnoughtHangar.{Ship, Weapon}
 
   plug :scrub_params, "ship" when action in [:create, :update]
 
