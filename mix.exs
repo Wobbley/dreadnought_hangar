@@ -38,7 +38,8 @@ defmodule DreadnoughtHangar.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:beaker, ">= 1.2.0"},
-     {:cors_plug, "~> 0.1.4"}]
+     {:cors_plug, "~> 0.1.4"},
+     {:poison, "~> 1.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
