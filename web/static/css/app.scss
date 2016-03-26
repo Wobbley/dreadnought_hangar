@@ -65,3 +65,17 @@ div.ship-weapon-info > div {
 div.ship-weapon-info {
   border: 0.1rem solid $light-gray;
 }
+
+.search-top {
+  display: inline;
+}
+
+#footer {
+  text-align: center;
+  padding: 1rem;
+  border: 0.1rem solid $light-gray;
+}
+
+#footer a:not(:first-child)::before{
+  content: " | ";
+}

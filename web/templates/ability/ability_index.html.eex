@@ -1,16 +1,22 @@
-<h1>Abilities</h1>
-<div class="entity-list">
+<div class="row ship-index">
+  <div class="small-12 large-12 columns">
+    <h1>Abiliti Hangar</h1>
+    <p>MAD SKILLZ</p>
+  </div>
+</div>
+<div class="row ship-index">
   <%= for ability <- @abilities do %>
-    <div class="entity">
-      <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">
-        <%= tag(:img, src: ability.icon_uri, class: "entity-image")  %>
-      </a>
-      <div class="info">
-        <a href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">
-          <div class="name"><%= ability.name %></div>
-        </a>
-        <div class="details"><%= ability.type %> | <%= ability.duration %> | <%= ability.cooldown %> </div>
-      </div>
-    </div>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: ability.icon_uri)  %>
+    <h4><%= ability.name %></h4>
+    
+    <ul>
+      <li>Type: <%= ability.type %></li>
+      <li>Class: Destroyer</li>
+      <li>Cost: 500 CR | 1000 SR</li>
+      <li>Unlock: 21 </li>
+    </ul>
+    <a class="secondary button" href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">Ability Details</a>
+  </div>
   <% end %>
 </div>

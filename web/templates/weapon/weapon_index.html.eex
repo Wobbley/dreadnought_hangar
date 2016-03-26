@@ -1,16 +1,22 @@
-<h1>Weapons</h1>
-<div class="entity-list">
+<div class="row ship-index">
+  <div class="small-12 large-12 columns">
+    <h1>Weapons Hangar</h1>
+    <p>Welcome captain, check out all the sick weapons</p>
+  </div>
+</div>
+<div class="row ship-index">
   <%= for weapon <- @weapons do %>
-    <div class="entity">
-      <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">
-        <%= tag(:img, src: weapon.icon_uri, class: "entity-image")  %>
-      </a>
-      <div class="info">
-        <a href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">
-          <div class="name"><%= weapon.name %></div>
-        </a>
-        <div class="details"><%= weapon.shots %> | <%= weapon.reload_time %></div>
-      </div>
-    </div>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: weapon.icon_uri)  %>
+    <h4><%= weapon.name %></h4>
+    
+    <ul>
+      <li>Type: <%= weapon.type %></li>
+      <li>Class: Destroyer</li>
+      <li>Cost: 500 CR | 1000 SR</li>
+      <li>Unlock: 21 </li>
+    </ul>
+    <a class="secondary button" href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">Weapon Details</a>
+  </div>
   <% end %>
 </div>

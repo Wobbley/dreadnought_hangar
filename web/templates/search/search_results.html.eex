@@ -1,60 +1,44 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Duration</th>
-      <th>Cooldown</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for ability <- @abilities do %>
-    <tr>
-      <td><%= ability.name %></td>
-      <td><%= ability.duration %></td>
-      <td><%= ability.cooldown %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ammo</th>
-      <th>Reload time</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for weapon <- @weapons do %>
-    <tr>
-      <td><%= weapon.name %></td>
-      <td><%= weapon.shots %></td>
-      <td><%= weapon.reload_time %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Armor</th>
-      <th>Class</th>
-      <th>Subclass</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for ship <- @ships do %>
-    <tr>
-      <td><%= ship.name %></td>
-      <td><%= ship.armor %></td>
-      <td><%= ship.class  %></td>
-      <td><%= ship.subclass  %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="row ship-index">
+  <%= for ship <- @ships do %>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: ship.icon_uri)  %>
+    <h4><%= ship.name %></h4>
+    <ul>
+      <li>Class: <%= ship.class %></li>
+      <li>Subclass: <%= ship.subclass %></li>
+    </ul>
+    <a class="secondary button" href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">Ship Report</a>
+  </div>
+  <% end %>
+</div>
+<div class="row ship-index">
+  <%= for ability <- @abilities do %>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: ability.icon_uri)  %>
+    <h4><%= ability.name %></h4>
+    
+    <ul>
+      <li>Type: <%= ability.type %></li>
+      <li>Class: Destroyer</li>
+      <li>Cost: 500 CR | 1000 SR</li>
+      <li>Unlock: 21 </li>
+    </ul>
+    <a class="secondary button" href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">Ability Details</a>
+  </div>
+  <% end %>
+</div>
+<div class="row ship-index">
+  <%= for weapon <- @weapons do %>
+  <div class="small-12 large-6 columns">
+    <%= tag(:img, src: weapon.icon_uri)  %>
+    <h4><%= weapon.name %></h4>
+    <ul>
+      <li>Type: <%= weapon.type %></li>
+      <li>Class: Destroyer</li>
+      <li>Cost: 500 CR | 1000 SR</li>
+      <li>Unlock: 21 </li>
+    </ul>
+    <a class="secondary button" href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">Weapon Details</a>
+  </div>
+  <% end %>
+</div>

@@ -1,41 +1,33 @@
-<h2>Show ship</h2>
-
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @ability.name %>
-  </li>
-
-  <li>
-    <strong>Duration:</strong>
-    <%= @ability.duration %> seconds
-  </li>
-
-  <li>
-    <strong>Cooldown:</strong>
-    <%= @ability.cooldown %> seconds
-  </li>
-
-  </ul>
-
-  <table class="table">
-    <thead>
+<div class="row ship-info">
+  <div class="small-12 large-12 columns">
+    <%= tag(:img, src: @ability.icon_uri)  %>
+    <h2><%= @ability.name %></h2>
+    <p>Sick text about the weapon</p>
+    <table>
       <tr>
-        <th>Name</th>
-        <th>Armor</th>
-        <th>Class</th>
-        <th>Subclass</th>
+        <td>Type</td>
+        <td><%= @ability.type %></td>
       </tr>
-    </thead>
-    <tbody>
-  <%= for ship <- @ships do %>
       <tr>
-        <td><%= ship.name %></td>
-        <td><%= ship.armor %></td>
-        <td><%= ship.class  %></td>
-        <td><%= ship.subclass  %></td>
+        <td>Class</td>
+        <td>Destroyer</td>
       </tr>
-  <% end %>
-    </tbody>
-  </table>
+      <tr>
+        <td>Unlock</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>Cost</td>
+        <td>500 CR | 1000 SR</td>
+      </tr>
+      <tr>
+        <td>Duration</td>
+        <td><%= @ability.duration %></td>
+      </tr>
+      <tr>
+        <td>Cooldown</td>
+        <td><%= @ability.cooldown %></td>
+      </tr>
+    </table>
+  </div>
+</div>
