@@ -4,9 +4,17 @@ defmodule DreadnoughtHangar.Perk do
   alias DreadnoughtHangar.{Ship, ShipPerk}
   
   schema "perks" do
-    field :name, :string
-    field :type, :string
-    field :icon_uri, :string
+      field :name, :string
+      field :description, :string
+      field :slot, :string
+      field :type, :string
+      field :unlock_level, :integer
+      field :cr, :integer
+      field :sr, :integer
+      field :trigger, :string
+      field :effect, :string
+      field :icon_uri, :string
+      field :raw_json, :map
 
     timestamps
     
@@ -14,8 +22,8 @@ defmodule DreadnoughtHangar.Perk do
     has_many :ships, through: [:ships_perks, :perks]
   end
 
-  @required_fields ~w(name type icon_uri)
-  @optional_fields ~w()
+  @required_fields ~w(name slot type icon_uri)
+  @optional_fields ~w(description unlock_level cr sr raw_json trigger effect)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
