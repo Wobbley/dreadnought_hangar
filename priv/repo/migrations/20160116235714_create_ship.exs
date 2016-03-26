@@ -5,8 +5,8 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateShip do
     create table(:ships) do
       add :name, :citext
       add :description, :string
-      add :type, :string
-      add :class, :string
+      add :type, :citext
+      add :class, :citext
       add :unlock_level, :integer
       add :cr, :integer
       add :sp, :integer

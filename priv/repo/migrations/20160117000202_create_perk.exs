@@ -5,8 +5,8 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreatePerk do
     create table(:perks) do
       add :name, :citext
       add :description, :string
-      add :slot, :string
-      add :type, :string
+      add :slot, :citext
+      add :type, :citext
       add :unlock_level, :integer
       add :cr, :integer
       add :sr, :integer

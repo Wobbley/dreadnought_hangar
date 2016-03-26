@@ -5,8 +5,8 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateWeapon do
     create table(:weapons) do
       add :name, :citext
       add :description, :string
-      add :slot, :string
-      add :usable_by, :string
+      add :slot, :citext
+      add :usable_by, :citext
       add :unlock_level, :integer
       add :sp, :integer
       add :cr, :integer

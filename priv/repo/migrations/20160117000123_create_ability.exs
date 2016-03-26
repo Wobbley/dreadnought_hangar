@@ -5,8 +5,8 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateAbility do
     create table(:abilities) do
       add :name, :citext
       add :description, :string
-      add :slot, :string
-      add :usable_by, :string
+      add :slot, :citext
+      add :usable_by, :citext
       add :unlock_level, :integer
       add :cr, :integer
       add :sr, :integer
