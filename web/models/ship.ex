@@ -2,11 +2,17 @@ defmodule DreadnoughtHangar.Ship do
   use DreadnoughtHangar.Web, :model
 
   schema "ships" do
-    field :name, :string
-    field :armor, :integer
-    field :class, :string
-    field :subclass, :string
-    field :icon_uri, :string
+      field :name, :string
+      field :description, :string
+      field :type, :string
+      field :class, :string
+      field :unlock_level, :integer
+      field :cr, :integer
+      field :sp, :integer
+      field :shield, :string
+      field :armor, :integer
+      field :icon_uri, :string
+      field :raw_json, :map
 
     timestamps
     
@@ -20,8 +26,8 @@ defmodule DreadnoughtHangar.Ship do
     has_many :perks, through: [:ships_perks, :ships]
   end
 
-  @required_fields ~w(name armor class subclass icon_uri)
-  @optional_fields ~w()
+  @required_fields ~w(name type class icon_uri)
+  @optional_fields ~w(shield armor unlock_level cr sp raw_json)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

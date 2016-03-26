@@ -4,13 +4,20 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateShip do
   def change do
     create table(:ships) do
       add :name, :citext
-      add :armor, :integer
+      add :description, :string
+      add :type, :string
       add :class, :string
-      add :subclass, :string
+      add :unlock_level, :integer
+      add :cr, :integer
+      add :sp, :integer
+      add :shield, :string
+      add :armor, :integer
       add :icon_uri, :string
-
+      add :raw_json, :map
+      
       timestamps
     end
+    
     create unique_index(:ships, [:name])
 
   end

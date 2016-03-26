@@ -12,9 +12,14 @@ defmodule DreadnoughtHangar.ShipView do
   def render("ship.json", %{ship: ship}) do
     %{id: ship.id,
       name: ship.name,
-      armor: ship.armor,
+      description: ship.description,
+      type: ship.type,
       class: ship.class,
-      subclass: ship.subclass,
+      unlock_level: ship.unlock_level
+      cr: ship.cr,
+      sp: ship.sp,
+      shield: ship.shield,
+      armor: ship.armor,
       icon_uri: ship.icon_uri}
   end
 end

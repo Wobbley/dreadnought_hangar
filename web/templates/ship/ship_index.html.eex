@@ -9,13 +9,11 @@
   <div class="small-12 large-6 columns">
     <%= tag(:img, src: ship.icon_uri)  %>
     <h4><%= ship.name %></h4>
-    
     <ul>
-      <li>Class: <%= ship.class %></li>
-      <li>Subclass: <%= ship.subclass %></li>
+      <li><%= ship.type %></li>
+      <li><%= ship.class %></li>
     </ul>
     <a class="secondary button" href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">Ship Report</a>
   </div>
   <% end %>
 </div>
-
