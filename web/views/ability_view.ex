@@ -12,7 +12,13 @@ defmodule DreadnoughtHangar.AbilityView do
   def render("ability.json", %{ability: ability}) do
     %{id: ability.id,
       name: ability.name,
+      description: ability.description,
+      slot: ability.slot,
       type: ability.type,
+      usable_by: ability.usable_by,
+      unlock_level: ability.unlock_level,
+      cr: ability.cr,
+      sr: ability.sr,
       duration: ability.duration,
       cooldown: ability.cooldown,
       icon_uri: ability.icon_uri}

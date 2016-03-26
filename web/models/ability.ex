@@ -4,11 +4,17 @@ defmodule DreadnoughtHangar.Ability do
   alias DreadnoughtHangar.{Ship, ShipAbility}
 
   schema "abilities" do
-    field :name, :string
-    field :type, :string
-    field :duration, :integer
-    field :cooldown, :integer
-    field :icon_uri, :string
+      field :name, :string
+      field :description, :string
+      field :slot, :string
+      field :usable_by, :string
+      field :unlock_level, :integer
+      field :cr, :integer
+      field :sr, :integer
+      field :duration, :integer
+      field :cooldown, :integer
+      field :icon_uri, :string
+      field :raw_json, :map
 
     timestamps
     
@@ -16,8 +22,8 @@ defmodule DreadnoughtHangar.Ability do
     has_many :ships, through: [:ships_abilities, :abilities]
   end
 
-  @required_fields ~w(name type duration cooldown icon_uri)
-  @optional_fields ~w()
+  @required_fields ~w(name slot usable_by icon_uri)
+  @optional_fields ~w(description unlock_level cr sr duration cooldown raw_json)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
