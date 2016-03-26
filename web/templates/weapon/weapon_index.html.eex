@@ -12,9 +12,8 @@
     
     <ul>
       <li>Type: <%= weapon.type %></li>
-      <li>Class: Destroyer</li>
-      <li>Cost: 500 CR | 1000 SR</li>
-      <li>Unlock: 21 </li>
+      <li>Unlock: <%= weapon.unlock_level %> </li>
+      <li>Cost: <%= weapon.cr %> CR | <%= weapon.sr %> SR</li>   
     </ul>
     <a class="secondary button" href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">Weapon Details</a>
   </div>

@@ -12,7 +12,12 @@ defmodule DreadnoughtHangar.WeaponView do
   def render("weapon.json", %{weapon: weapon}) do
     %{id: weapon.id,
       name: weapon.name,
-      type: weapon.type,
+      description: weapon.description,
+      slot: weapon.slot,
+      usable_by: weapon.usable_by
+      unlock_level: weapon.unlock_level,
+      cr: weapon.cr,
+      sp: weapon.sp,
       shots: weapon.shots,
       reload_time: weapon.reload_time,
       icon_uri: weapon.icon_uri}

@@ -4,20 +4,26 @@ defmodule DreadnoughtHangar.Weapon do
   alias DreadnoughtHangar.{Ship, ShipWeapon}
 
   schema "weapons" do
-    field :name, :string
-    field :type, :string
-    field :shots, :integer
-    field :reload_time, :integer
-    field :icon_uri, :string
-
+      field :name, :string
+      field :description, :string
+      field :slot, :string
+      field :usable_by, :string
+      field :unlock_level, :integer
+      field :cr, :integer
+      field :sp, :integer
+      field :shots, :integer
+      field :reload_time, :integer
+      field :icon_uri, :string
+      field :raw_json, :map
+    
     timestamps
     
     has_many :ships_weapons, ShipWeapon
     has_many :ships, through: [:ships_weapons, :weapons]
   end
 
-  @required_fields ~w(name type shots reload_time icon_uri)
-  @optional_fields ~w()
+  @required_fields ~w(name slot usable_by icon_uri)
+  @optional_fields ~w(description unlock_level sp cr shots reload_time raw_json)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
