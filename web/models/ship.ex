@@ -57,8 +57,7 @@ defmodule DreadnoughtHangar.Ship do
   """
   def get_weapons(query, ship_name) do
     from s in query,
-    join: sw in DreadnoughtHangar.ShipWeapon, on: s.id == sw.ship_id,
-    inner_join: w in DreadnoughtHangar.Weapon, on: w.id == sw.weapon_id,
+    inner_join: w in DreadnoughtHangar.Weapon, on: w.usable_by == s.type,
     select: w,
     where: s.name == ^ship_name
   end
