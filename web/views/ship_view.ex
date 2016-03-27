@@ -15,7 +15,7 @@ defmodule DreadnoughtHangar.ShipView do
       description: ship.description,
       type: ship.type,
       class: ship.class,
-      unlock_level: ship.unlock_level
+      unlock_level: ship.unlock_level,
       cr: ship.cr,
       sp: ship.sp,
       shield: ship.shield,

@@ -14,7 +14,7 @@ defmodule DreadnoughtHangar.WeaponView do
       name: weapon.name,
       description: weapon.description,
       slot: weapon.slot,
-      usable_by: weapon.usable_by
+      usable_by: weapon.usable_by,
       unlock_level: weapon.unlock_level,
       cr: weapon.cr,
       sp: weapon.sp,
