@@ -56,12 +56,4 @@ defmodule DreadnoughtHangar.ShipController do
     ships = Ability |> Ability.get_ships(ability_name) |> Repo.all
     render(conn, "show_index.json", ships: ships)
   end
-  
-  @doc """
-  Given an perk name, return all ships that can use that ability.
-  """
-  def json_ships_by_perk(conn, %{"perk_name" => perk_name}) do
-    ships = Perk |> Perk.get_ships(perk_name) |> Repo.all
-    render(conn, "index.json", ships: ships)
-  end
 end

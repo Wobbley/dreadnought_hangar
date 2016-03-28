@@ -42,8 +42,7 @@ defmodule DreadnoughtHangar.Ability do
   """
   def get_ships(query, ability_name) do
     from a in query,
-    join: sa in ShipAbility, on: a.id == sa.ability_id,
-    inner_join: s in Ship, on: s.id == sa.ship_id,
+    inner_join: s in Ship, on: s.type == a.usable_by,
     select: s,
     where: a.name == ^ability_name
   end

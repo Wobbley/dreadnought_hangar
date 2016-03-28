@@ -38,17 +38,6 @@ defmodule DreadnoughtHangar.Perk do
   end
   
   @doc """
-  Returns the query to find all ships that can use a perk, given a perk name.
-  """
-  def get_ships(query, perk_name) do
-    from p in query,
-    join: sp in ShipPerk, on: p.id == sp.perk_id,
-    inner_join: s in Ship, on: s.id == sp.ship_id,
-    select: s,
-    where: p.name == ^perk_name
-  end
-  
-  @doc """
   Query to perform a search on perk names with the given search query.
   """
   def search(query, search_query) do

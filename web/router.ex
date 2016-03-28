@@ -39,7 +39,7 @@ defmodule DreadnoughtHangar.Router do
     get "/perks", PerkController, :html_perk_index
     get "/perks/:perk_name", PerkController, :html_perk_info
     
-    post "/search", SearchController, :search
+      post "/search", SearchController, :search
   
   end
 
@@ -51,7 +51,6 @@ defmodule DreadnoughtHangar.Router do
     get "/ships/:ship_name", ShipController, :json_ship_show
     get "/ships/weapons/:ship_name", WeaponController, :json_weapons_by_ship
     get "/ships/abilities/:ship_name", AbilityController, :json_abilities_by_ship
-    get "/ships/perks/:ship_name", PerkController, :json_perks_by_ship
     
     get "/weapons", WeaponController, :json_weapon_index
     get "/weapons/:weapon_name", WeaponController, :json_weapon_show
@@ -63,7 +62,6 @@ defmodule DreadnoughtHangar.Router do
     
     get "/perks", PerkController, :json_perk_index
     get "/perks/:perk_name", PerkController, :json_perk_show
-    get "/perks/ships/:perk_name", PerkController, :json_ships_by_perk
   
   end
 end

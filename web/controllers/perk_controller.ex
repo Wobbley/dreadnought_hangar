@@ -1,7 +1,7 @@
 defmodule DreadnoughtHangar.PerkController do
   use DreadnoughtHangar.Web, :controller
 
-  alias DreadnoughtHangar.{Perk, Ship}
+  alias DreadnoughtHangar.{Perk}
 
   plug :scrub_params, "perk" when action in [:create, :update]
   
@@ -18,8 +18,7 @@ defmodule DreadnoughtHangar.PerkController do
   """
   def html_perk_info(conn, %{"perk_name" => perk_name}) do
     perk = Repo.get_by(Perk, name: perk_name)
-    ships = Perk |> Perk.get_ships(perk_name) |> Repo.all
-    render(conn, "perk_show.html", perk: perk, ships: ships)
+    render(conn, "perk_show.html", perk: perk)
   end
   
   @doc """
@@ -36,14 +35,6 @@ defmodule DreadnoughtHangar.PerkController do
   def json_perk_show(conn, %{"perk_name" => perk_name}) do
     perk = Repo.get_by(Perk, name: perk_name)
     render(conn, "perk_show.json", perk: perk)
-  end
-  
-  @doc """
-  Given a ship name it returns all perks usable by the ship.
-  """
-  def json_perks_by_ship(conn, %{"ship_name" => ship_name}) do
-    perks = Ship |> Ship.get_perks(ship_name) |> Repo.all
-    render(conn, "perk_index.json", perks: perks)
   end
  
 end
