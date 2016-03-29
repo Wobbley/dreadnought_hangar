@@ -23,4 +23,7 @@ Navigate to the folder containing the git repo and do the following:
 * Run 'mix ecto.migrate' (Runs the various SQL scripts to create tables, indices and so on)
 * Run 'mix phoenix.server' to start the server
 * The site should now be located at [`localhost:4000`](http://localhost:4000)
-* (Optional) Use 'mix run priv/repo/seeds.exs' to insert data. It currently only contains ships, and 2 made up abilities/weapons.
+* (Optional) Use 'mix run priv/repo/ships.exs' to insert data.
+* (Optional) Use 'mix run priv/repo/abilities.exs' to insert data.
+* (Optional) Use 'mix run priv/repo/perks.exs' to insert data.
+* (Optional) Use 'mix run priv/repo/weapons.exs' to insert data.
