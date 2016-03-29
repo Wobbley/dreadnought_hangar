@@ -11,6 +11,18 @@ h1, h2, h3, h4, h5 {
 
 div.index .button {
   float: right;
+  background-image: $button-grad;
+  border: 0.1rem $black;
+  text-shadow: -1px -1px #000;
+  box-shadow: 0px 0px 5px $grad-highlite;
+  -webkit-transition: all 1s ease-out;  
+  -moz-transition: all 1s ease-out;  
+  -o-transition: all 1s ease-out;  
+  transition: all 1s ease-out;      
+}
+div.index .button:hover {
+  text-shadow: 1px 1px #000;
+  box-shadow: 0px 0px 20px #F80;
 }
 
 div.index p {
@@ -19,6 +31,7 @@ div.index p {
 
 div.index > div {
   border: 0.1rem solid $light-gray;
+  background: $infobox-background;
 }
 
 div.ship-index img {
@@ -71,6 +84,7 @@ div.ship-weapon-info {
 }
 
 #footer {
+  background-image: $topbar-submenu-grad;
   text-align: center;
   padding: 1rem;
   border: 0.1rem solid $light-gray;
@@ -78,4 +92,8 @@ div.ship-weapon-info {
 
 #footer a:not(:first-child)::before{
   content: " | ";
+}
+
+.top-bar{
+  background-image: $topbar-submenu-grad;
 }
