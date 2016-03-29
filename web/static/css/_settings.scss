@@ -243,7 +243,7 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-grad: linear-gradient( $grad-start, $grad-highlite);
+$button-grad: linear-gradient( $grad-highlite, $grad-end);
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
