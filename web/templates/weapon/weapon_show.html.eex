@@ -2,23 +2,23 @@
   <div class="small-12 large-12 columns">
     <%= tag(:img, src: @weapon.icon_uri)  %>
     <h2><%= @weapon.name %></h2>
-    <p>Sick text about the weapon</p>
+    <p><%= @weapon.description %></p>
     <table>
       <tr>
         <td>Type</td>
-        <td><%= @weapon.type %></td>
+        <td><%= @weapon.slot %></td>
       </tr>
       <tr>
         <td>Class</td>
-        <td>Destroyer</td>
+        <td><%= @weapon.usable_by %></td>
       </tr>
       <tr>
         <td>Unlock</td>
-        <td>21</td>
+        <td><%= @weapon.unlock_level %></td>
       </tr>
       <tr>
         <td>Cost</td>
-        <td>500 CR | 1000 SR</td>
+        <td><%= @weapon.cr %> CR | <%= @weapon.sp %> SP</td>
       </tr>
       <tr>
         <td>Shots</td>

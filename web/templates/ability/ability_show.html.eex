@@ -6,19 +6,19 @@
     <table>
       <tr>
         <td>Type</td>
-        <td><%= @ability.type %></td>
+        <td><%= @ability.slot %></td>
       </tr>
       <tr>
-        <td>Class</td>
-        <td>Destroyer</td>
+        <td>Usable</td>
+        <td><%= @ability.usable_by %></td>
       </tr>
       <tr>
         <td>Unlock</td>
-        <td>21</td>
+        <td><%= @ability.unlock_level %></td>
       </tr>
       <tr>
         <td>Cost</td>
-        <td>500 CR | 1000 SR</td>
+        <td><%= @ability.cr %> CR | <%= @ability.sp %> SP</td>
       </tr>
       <tr>
         <td>Duration</td>

@@ -2,19 +2,31 @@
   <div class="small-12 large-12 columns">
     <%= tag(:img, src: @perk.icon_uri)  %>
     <h2><%= @perk.name %></h2>
-    <p>Sick text about the weapon</p>
+    <p><%= @perk.description %></p>
     <table>
       <tr>
         <td>Type</td>
         <td><%= @perk.type %></td>
       </tr>
       <tr>
+        <td>Slot</td>
+        <td><%= @perk.slot %></td>
+      </tr>
+      <tr>
         <td>Unlock</td>
-        <td>21</td>
+        <td><%= @perk.unlock_level %></td>
       </tr>
       <tr>
         <td>Cost</td>
-        <td>500 CR | 1000 SR</td>
+        <td><%= @perk.cr %> CR | <%= @perk.sp %> SP</td>
+      </tr>
+      <tr>
+        <td>Trigger</td>
+        <td><%= @perk.trigger %></td>
+      </tr>
+      <tr>
+        <td>Effect</td>
+        <td><%= @perk.effect %></td>
       </tr>
     </table>
   </div>

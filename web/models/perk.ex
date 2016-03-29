@@ -10,7 +10,7 @@ defmodule DreadnoughtHangar.Perk do
       field :type, :string
       field :unlock_level, :integer
       field :cr, :integer
-      field :sr, :integer
+      field :sp, :integer
       field :trigger, :string
       field :effect, :string
       field :icon_uri, :string

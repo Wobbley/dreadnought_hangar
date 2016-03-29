@@ -9,7 +9,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreatePerk do
       add :type, :citext
       add :unlock_level, :integer
       add :cr, :integer
-      add :sr, :integer
+      add :sp, :integer
       add :trigger, :string
       add :effect, :string
       add :icon_uri, :string

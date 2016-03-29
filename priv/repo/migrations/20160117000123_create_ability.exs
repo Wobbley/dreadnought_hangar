@@ -9,7 +9,7 @@ defmodule DreadnoughtHangar.Repo.Migrations.CreateAbility do
       add :usable_by, :citext
       add :unlock_level, :integer
       add :cr, :integer
-      add :sr, :integer
+      add :sp, :integer
       add :duration, :integer
       add :cooldown, :integer
       add :icon_uri, :string

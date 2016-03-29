@@ -10,7 +10,7 @@ defmodule DreadnoughtHangar.Ability do
       field :usable_by, :string
       field :unlock_level, :integer
       field :cr, :integer
-      field :sr, :integer
+      field :sp, :integer
       field :duration, :integer
       field :cooldown, :integer
       field :icon_uri, :string

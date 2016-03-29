@@ -11,8 +11,8 @@
     <h4><%= perk.name %></h4>
     <ul>
       <li>Type: <%= perk.type %></li>
-      <li>Cost: 500 CR | 1000 SR</li>
-      <li>Unlock: 21 </li>
+      <li>Cost: <%= perk.cr %> CR | <%= perk.sp %> SP</li>
+      <li>Unlock: <%= perk.unlock_level %> </li>
     </ul>
     <a class="secondary button" href="<%= perk_path(@conn, :html_perk_info, perk.name) %>">Perk Details</a>
   </div>

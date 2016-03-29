@@ -12,6 +12,8 @@
     <ul>
       <li><%= ship.type %></li>
       <li><%= ship.class %></li>
+      <li><%= ship.cr %> CR | <%= ship.sp %> SP</li>
+      <li><%= ship.unlock_level %> </li
     </ul>
     <a class="secondary button" href="<%= ship_path(@conn, :html_ship_show, ship.name) %>">Ship Report</a>
   </div>

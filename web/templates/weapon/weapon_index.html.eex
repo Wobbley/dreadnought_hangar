@@ -11,9 +11,9 @@
     <h4><%= weapon.name %></h4>
     
     <ul>
-      <li>Type: <%= weapon.type %></li>
+      <li>Type: <%= weapon.slot %></li>
       <li>Unlock: <%= weapon.unlock_level %> </li>
-      <li>Cost: <%= weapon.cr %> CR | <%= weapon.sr %> SR</li>   
+      <li>Cost: <%= weapon.cr %> CR | <%= weapon.sp %> SP</li>   
     </ul>
     <a class="secondary button" href="<%= weapon_path(@conn, :html_weapon_info, weapon.name) %>">Weapon Details</a>
   </div>

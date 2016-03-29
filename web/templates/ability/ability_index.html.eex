@@ -11,10 +11,10 @@
     <h4><%= ability.name %></h4>
     
     <ul>
-      <li>Type: <%= ability.type %></li>
-      <li>Class: Destroyer</li>
-      <li>Cost: 500 CR | 1000 SR</li>
-      <li>Unlock: 21 </li>
+      <li>Slot: <%= ability.slot %></li>
+      <li>Class: <%= ability.usable_by %></li>
+      <li>Cost: <%= ability.cr %> CR | <%= ability.sp %> SP</li>
+      <li>Unlock: <%= ability.unlock_level %> </li>
     </ul>
     <a class="secondary button" href="<%= ability_path(@conn, :html_ability_info, ability.name) %>">Ability Details</a>
   </div>

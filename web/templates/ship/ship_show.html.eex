@@ -2,19 +2,27 @@
   <div class="small-12 large-12 columns">
     <%= tag(:img, src: @ship.icon_uri)  %>
     <h2><%= @ship.name %></h2>
-    <p>Sick text about the defiant</p>
+    <p><%= @ship.description %></p>
     <table>
       <tr>
-        <td>Armor</td>
-        <td>9001</td>
+        <td>Type</td>
+        <td><%= @ship.type %></td>
       </tr>
       <tr>
-        <td>Shield Type</td>
-        <td>Mitigation</td>
+        <td>Class</td>
+        <td><%= @ship.class %></td>
       </tr>
       <tr>
         <td>Cost</td>
-        <td>8000CR | 400SR</td>
+        <td><%= @ship.cr %> CR | <%= @ship.sp %> SP</td>
+      </tr>
+      <tr>
+        <td>Shield Type</td>
+        <td><%= @ship.shield %></td>
+      </tr>
+      <tr>
+        <td>Armor</td>
+        <td><%= @ship.armor %></td>
       </tr>
     </table>
   </div>
@@ -28,15 +36,7 @@
       <table>
         <tr>
           <td>Type</td>
-          <td><%= weapon.type %></td>
-        </tr>
-        <tr>
-          <td>Shots</td>
-          <td><%= weapon.shots %></td>
-        </tr>
-        <tr>
-          <td>Reload Time</td>
-          <td><%= weapon.shots %></td>
+          <td><%= weapon.slot %></td>
         </tr>
         <tr>
           <td>Cost</td>
@@ -55,7 +55,7 @@
       <table>
         <tr>
           <td>Type</td>
-          <td><%= ability.type %></td>
+          <td><%= ability.slot %></td>
         </tr>
         <tr>
           <td>Duration</td>
