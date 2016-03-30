@@ -1,5 +1,5 @@
 <div class="row ship-info">
-  <div class="small-12 large-12 columns">
+  <div class="small-12 large-12 columns DH-box-content">
     <%= tag(:img, src: @ability.icon_uri)  %>
     <h2><%= @ability.name %></h2>
     <p>Sick text about the weapon</p>

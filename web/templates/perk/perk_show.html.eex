@@ -1,5 +1,5 @@
 <div class="row ship-info">
-  <div class="small-12 large-12 columns">
+  <div class="small-12 large-12 columns DH-box-content">
     <%= tag(:img, src: @perk.icon_uri)  %>
     <h2><%= @perk.name %></h2>
     <p><%= @perk.description %></p>

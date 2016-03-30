@@ -1,12 +1,12 @@
 <div class="row ship-index">
-  <div class="small-12 large-12 columns">
+  <div class="small-12 large-12 columns DH-box-content">
     <h1>Perks</h1>
     <p>MAD PERKS</p>
   </div>
 </div>
 <div class="row ship-index">
   <%= for perk <- @perks do %>
-  <div class="small-12 large-6 columns">
+  <div class="small-12 large-6 columns DH-box-content">
     <%= tag(:img, src: perk.icon_uri)  %>
     <h4><%= perk.name %></h4>
     <ul>

@@ -1,12 +1,12 @@
 <div class="row ship-index">
-  <div class="small-12 large-12 columns">
+  <div class="small-12 large-12 columns DH-box-content">
     <h1>Hangar</h1>
     <p>Welcome to the hangar captain! In here you can view all the ships that can be attained in Dreadnought.</p>
   </div>
 </div>
 <div class="row ship-index">
   <%= for ship <- @ships do %>
-  <div class="small-12 large-6 columns">
+  <div class="small-12 large-6 columns DH-box-content">
     <%= tag(:img, src: ship.icon_uri)  %>
     <h4><%= ship.name %></h4>
     <ul>
