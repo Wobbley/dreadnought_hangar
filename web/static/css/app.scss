@@ -9,9 +9,15 @@
 /*-----------------*
  *  Global Layout  *
  *-----------------*/
-
+body{
+  background-color: $grad-end;
+}
 h1, h2, h3, h4, h5 {
   color: $DH-orange;
+}
+body{
+  max-width: 1200px;
+  margin: auto;
 }
 .button {
   float: right;
@@ -24,29 +30,36 @@ h1, h2, h3, h4, h5 {
   -o-transition: all 0.5s ease-out;  
   transition: all 0.5s ease-out;      
 }
- .button:hover {
+.button:hover {
   text-shadow: 1px 1px #000;
   box-shadow: 0px 0px 20px #F80;
 }
 
-div.index p {
-  margin-bottom: 3rem;
+#DH-logo{
+  width:100px;
+  height: auto;
+  //transform: translate(10%, 30%)
 }
 
 .DH-box-content {
-  border: 0.1rem solid $light-gray;
+  border-top: 0.1rem solid $light-gray;
+  border-left: 0.1rem solid $light-gray;
+  border-right: 0.1rem solid $grad-end;
+  border-bottom: 0.1rem solid $grad-end;
   background: $infobox-background;
   padding: 3rem;
 }
 
+/*-----------------*
+ *     To Clean    *
+ *-----------------*/
+
 div.ship-index img {
   float: right;
 }
-
-div.ship-index > div {
-  border: 0.1rem solid $light-gray;
+div.index p {
+  margin-bottom: 3rem;
 }
-
 div.ship-index p {
   margin-bottom: 3rem;
 }
@@ -56,14 +69,9 @@ div.ship-index ul {
   margin-left: 0;
 }
 
-div.ship-info > div {
-  border: 0.1rem solid $light-gray;
-}
-
 div.ship-info img {
   float: right;
 }
-
 li {
   list-style-type: none;
 }
@@ -78,10 +86,6 @@ div.ship-weapon-info img {
 
 div.ship-weapon-info > div {
   border-left: 0.1rem solid $light-gray;
-}
-
-div.ship-weapon-info {
-  border: 0.1rem solid $light-gray;
 }
 
 .search-top {

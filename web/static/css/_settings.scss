@@ -56,6 +56,9 @@ $foundation-palette: (
   alert: #ec5840,
 );
 $DH-orange:#E94F37;
+$grad-end: #161819;
+$grad-start: #423b3a;
+$grad-highlite: #512d27;
 $light-gray: #424C55;
 $medium-gray: #2E2532;
 $dark-gray: #010400;
@@ -74,11 +77,6 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
-
-
-$grad-end: #161819;
-$grad-start: #423b3a;
-$grad-highlite: #512d27;
 
 @include add-foundation-colors;
 
@@ -567,8 +565,8 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
-$topbar-submenu-background: $topbar-background;
+$topbar-background: none;
+$topbar-submenu-background: $grad-end;
 $topbar-submenu-grad: linear-gradient( $grad-start, $grad-end);
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

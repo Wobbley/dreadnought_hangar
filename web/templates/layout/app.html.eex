@@ -19,7 +19,7 @@
       <div class="top-bar" id="example-menu">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">Dreadnought Hangar</li>
+            <li><img src="../images/layout/DH_logo.png" alt="Dreadnought Hangar" id="DH-logo"></li>
             <li>
               <a href="#">Database</a>
               <ul class="menu vertical">
@@ -43,8 +43,8 @@
         </div>
       </header>
     </div>
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <!--p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p-->
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
