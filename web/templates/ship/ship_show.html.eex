@@ -34,7 +34,7 @@
       <%= for weapon <- @weapons do %>
         <div class="small-12 large-4 columns DH-box-content">
           <h6><%= weapon.name %></h6>
-          <%= tag(:img, src: @ship.icon_uri)  %>
+          <%= tag(:img, src: weapon.icon_uri)  %>
         <table>
           <tr>
             <td>Type</td>
@@ -56,7 +56,7 @@
       <%= for ability <- @abilities do %>
         <div class="small-12 large-4 columns">
           <h6><%= ability.name %></h6>
-          <%= tag(:img, src: @ship.icon_uri)  %>
+          <%= tag(:img, src: ability.icon_uri)  %>
         <table>
           <tr>
             <td>Type</td>
