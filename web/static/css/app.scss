@@ -17,8 +17,14 @@ h1, h2, h3, h4, h5 {
 }
 body{
   max-width: 1200px;
+  min-width: 350px;
   margin: auto;
 }
+.row .row{
+    padding: 0;
+    margin: 0;
+}
+
 .button {
   float: right;
   background-image: $button-grad;
@@ -47,7 +53,7 @@ body{
   border-right: 0.1rem solid $grad-end;
   border-bottom: 0.1rem solid $grad-end;
   background: $infobox-background;
-  padding: 3rem;
+  padding: 1rem;  
 }
 
 /*-----------------*

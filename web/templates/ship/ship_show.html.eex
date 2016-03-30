@@ -1,76 +1,85 @@
 <div class="row ship-info">
   <div class="small-12 large-12 columns DH-box-content">
-    <%= tag(:img, src: @ship.icon_uri)  %>
     <h2><%= @ship.name %></h2>
-    <p><%= @ship.description %></p>
-    <table>
-      <tr>
-        <td>Type</td>
-        <td><%= @ship.type %></td>
-      </tr>
-      <tr>
-        <td>Class</td>
-        <td><%= @ship.class %></td>
-      </tr>
-      <tr>
-        <td>Cost</td>
-        <td><%= @ship.cr %> CR | <%= @ship.sp %> SP</td>
-      </tr>
-      <tr>
-        <td>Shield Type</td>
-        <td><%= @ship.shield %></td>
-      </tr>
-      <tr>
-        <td>Armor</td>
-        <td><%= @ship.armor %></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<div class="row ship-weapon-info">
-  <div class="small-12 large-12 columns DH-box-content">
-    <h2>Weapons</h2>
     <div class="row">
-      <%= for weapon <- @weapons do %>
-        <div class="small-12 large-4 columns DH-box-content">
-          <h6><%= weapon.name %></h6>
-          <%= tag(:img, src: weapon.icon_uri)  %>
+     <div class="small-6 large-4 columns">
         <table>
           <tr>
             <td>Type</td>
-            <td><%= weapon.slot %></td>
+            <td><%= @ship.type %></td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td><%= @ship.class %></td>
           </tr>
           <tr>
             <td>Cost</td>
-            <td>1000CR | 100SR</td>
+            <td><%= @ship.cr %> CR | <%= @ship.sp %> SP</td>
+          </tr>
+          <tr>
+            <td>Shield Type</td>
+            <td><%= @ship.shield %></td>
+          </tr>
+          <tr>
+            <td>Armor</td>
+            <td><%= @ship.armor %></td>
           </tr>
         </table>
+      </div>
+      <div class="small-6 large-4  large-order-3 columns">
+        <%= tag(:img, src: @ship.icon_uri)  %>
+      </div>
+      <div class="small-6 large-4 columns">
+        <p><%= @ship.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns DH-box-content">
+    <h2>Weapons</h2>
+    <div class="row">
+      <%= for weapon <- @weapons do %>
+        <div class="small-6 large-3 columns DH-box-content">
+          <h6><%= weapon.name %></h6>
+          <%= tag(:img, src: weapon.icon_uri)  %>
+          <table>
+            <tr>
+              <td>Type</td>
+              <td><%= weapon.slot %></td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>1000CR | 100SR</td>
+            </tr>
+          </table>
         </div>
       <% end %>
     </div>
+  </div>
 </div>
-<div class="row ship-weapon-info">
-  <div class="small-12 large-12 columns DH-box-content">
+<div class="row">
+  <div class="small-12 columns DH-box-content">
     <h2>Abilities</h2>
-    <class="row">
+    <div class="row">
       <%= for ability <- @abilities do %>
-        <div class="small-12 large-4 columns">
+        <div class="small-6 large-3 columns DH-box-content">
           <h6><%= ability.name %></h6>
           <%= tag(:img, src: ability.icon_uri)  %>
-        <table>
-          <tr>
-            <td>Type</td>
-            <td><%= ability.slot %></td>
-          </tr>
-          <tr>
-            <td>Duration</td>
-            <td><%= ability.duration %></td>
-          </tr>
-          <tr>
-            <td>Cooldown</td>
-            <td><%= ability.cooldown %></td>
-          </tr>
-        </table>
+          <table>
+            <tr>
+              <td>Type</td>
+              <td><%= ability.slot %></td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td><%= ability.duration %></td>
+            </tr>
+            <tr>
+              <td>Cooldown</td>
+              <td><%= ability.cooldown %></td>
+            </tr>
+          </table>
         </div>
       <% end %>
     </div>
